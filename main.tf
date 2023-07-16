@@ -20,10 +20,10 @@ resource "aws_db_instance" "verpaxdb" {
   instance_class        = "db.t3.micro"
   allocated_storage     = 20
   identifier            = "verpaxdb"
-  username              = "edwin123"
-  password              = "password123"
+  username              = var.username
+  password              = var.password
   skip_final_snapshot   = false
-  final_snapshot_identifier = "mydb-final-snapshot"
+  final_snapshot_identifier = "verpaxdb-final-snapshot-2"
   vpc_security_group_ids = [aws_default_security_group.default-sg.id]
   db_subnet_group_name  = aws_db_subnet_group.verpaxdb_subnet_group.id
 }

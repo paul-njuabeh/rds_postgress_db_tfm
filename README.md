@@ -7,6 +7,12 @@
 # https://medium.com/gruntwork/a-comprehensive-guide-to-managing-secrets-in-your-terraform-code-1d586955ace1
 
 #The PostgreSQL server version 14.7 will run on a linux server. The database server will start successfully and will be ready to accept connections on port 5432 for IPv4, IPv6, and unix sockets respectively. A checkpoint operation will be performed, which involves writing database changes from memory to disk to ensure data integrity and prevent data loss in case of a server crash. The log includes details about the checkpoint operation, including how many buffers will be written and how long the operation will take.
+
+## Set secrets via environment variables
+# export TF_VAR_username=(The username for the DB master user)
+# export TF_VAR_password=(The password for the DB master user)
+# When you run Terraform, it'll pick up the secrets automatically
+# terraform apply
 #
 #
 #
